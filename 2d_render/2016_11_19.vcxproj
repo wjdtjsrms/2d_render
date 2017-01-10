@@ -12,29 +12,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\seafloar.dds" />
-    <None Include="Shader_code\Texture.ps" />
-    <None Include="Shader_code\Texture.vs" />
+    <None Include="Shader_code\Font.ps" />
+    <None Include="Shader_code\Font.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source_code\bitmapclass.cpp" />
     <ClCompile Include="Source_code\cameraclass.cpp" />
     <ClCompile Include="Source_code\D3dclass.cpp" />
+    <ClCompile Include="Source_code\Fontclass.cpp" />
     <ClCompile Include="Source_code\Graphicsclass.cpp" />
     <ClCompile Include="Source_code\Inputclass.cpp" />
     <ClCompile Include="Source_code\Main.cpp" />
     <ClCompile Include="Source_code\Systemclass.cpp" />
+    <ClCompile Include="Source_code\Textclass.cpp" />
     <ClCompile Include="Source_code\Textureclass.cpp" />
-    <ClCompile Include="Source_code\Textureshaderclass.cpp" />
+    <ClCompile Include="Source_code\Fontshaderclass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header_file\bitmapclass.h" />
     <ClInclude Include="Header_file\Cameraclass.h" />
     <ClInclude Include="Header_file\D3dclass.h" />
+    <ClInclude Include="Header_file\Fontclass.h" />
     <ClInclude Include="Header_file\Graphicsclass.h" />
     <ClInclude Include="Header_file\Inputclass.h" />
     <ClInclude Include="Header_file\SystemClass.h" />
+    <ClInclude Include="Header_file\Textclass.h" />
     <ClInclude Include="Header_file\Textureclass.h" />
-    <ClInclude Include="Header_file\Textureshaderclass.h" />
+    <ClInclude Include="Header_file\Fontshaderclass.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{ADA8CA52-3BB9-4338-8479-A5C174BF34B8}</ProjectGuid>

@@ -8,8 +8,8 @@ GraphicsClass::GraphicsClass()
 {
 	m_D3D = 0;
 	m_Camera = 0;
-	m_TextureShader = 0;
-	m_Bitmap = 0;
+
+	m_Text = 0;
 }
 
 
@@ -26,6 +26,7 @@ GraphicsClass::~GraphicsClass()
 bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 {
 	bool result;
+	XMMATRIX baseViewMatrix;
 
 
 	// Create the Direct3D object.
@@ -52,35 +53,29 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	// Set the initial position of the camera.
 	m_Camera->SetPosition(0.0f, 0.0f, -5.0f);
 	
-	// Create the model object.
-	// Create the color shader object.
-	m_TextureShader = new Textureshaderclass;
-	if (!m_TextureShader)
+	// Initialize a base view matrix with the camera for 2D user interface rendering.
+	m_Camera->SetPosition(0.0f, 0.0f, -1.0f);
+	m_Camera->Render();
+	m_Camera->GetViewMatrix(baseViewMatrix);
+
+	// Create the text object.
+	m_Text = new TextClass;
+	if (!m_Text)
 	{
 		return false;
 	}
 
-	// Initialize the color shader object.
-	result = m_TextureShader->Initialize(m_D3D->GetDevice(), hwnd);
-	if(!result)
-	{
-		MessageBox(hwnd, L"Could not initialize the color shader object.", L"Error", MB_OK);
-		return false;
-	}
-
-
-	m_Bitmap = new BitmapClass();
-	if (!m_Bitmap)
-	{
-		return false;
-	}
-
-	result = m_Bitmap->Initialize(m_D3D->GetDevice(), screenWidth, screenHeight, L"Resource/seafloar.dds",256,256);
+	// Initialize the text object.
+	result = m_Text->Initialize(m_D3D->GetDevice(), m_D3D->GetDeviceContext(), hwnd, screenWidth, screenHeight, baseViewMatrix);
 	if (!result)
 	{
-		MessageBox(hwnd, L"Could not initialize the bitmap object.", L"Error", MB_OK);
+		MessageBox(hwnd, L"Could not initialize the text object.", L"Error", MB_OK);
 		return false;
 	}
+
+
+
+
 
 
 	return true;
@@ -89,22 +84,13 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 void GraphicsClass::Shutdown()
 {
-	// Release the color shader object.
-	if (m_TextureShader)
+	// Release the text object.
+	if (m_Text)
 	{
-		m_TextureShader->Shutdown();
-		delete m_TextureShader;
-		m_TextureShader = 0;
+		m_Text->Shutdown();
+		delete m_Text;
+		m_Text = 0;
 	}
-
-	if (m_Bitmap)
-	{
-		m_Bitmap->Shutdown();
-		delete m_Bitmap;
-		m_Bitmap = 0;
-	}
-
-	
 	// Release the camera object.
 	if(m_Camera)
 	{
@@ -128,7 +114,6 @@ bool GraphicsClass::Frame()
 {
 	bool result;
 
-	position_x += 1;
 
 	result = Render();
 	if(!result)
@@ -160,20 +145,15 @@ bool GraphicsClass::Render()
 
 
 	m_D3D->TurnZBufferOff();
+	m_D3D->TurnOnAlphaBlending();
 
-	// Put the model vertex and index buffers on the graphics pipeline to prepare them for drawing.
-	result = m_Bitmap->Render(m_D3D->GetDeviceContext(), 100 + position_x, 100);
+	result = m_Text->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix);
 	if (!result)
 	{
 		return false;
 	}
 
-	// Render the model using the color shader.
-	result = m_TextureShader->Render(m_D3D->GetDeviceContext(), m_Bitmap->GetIndexCount(), worldMatrix, viewMatrix, orthoMatrix, m_Bitmap->GetTexture());
-	if(!result)
-	{
-		return false;
-	}
+	m_D3D->TurnOffAlphaBlending();
 	m_D3D->TurnZBufferOn();
 
 	// Present the rendered scene to the screen.

@@ -27,10 +27,10 @@
     <None Include="Resource\seafloar.dds">
       <Filter>리소스 파일</Filter>
     </None>
-    <None Include="Shader_code\Texture.ps">
+    <None Include="Shader_code\Font.ps">
       <Filter>소스 파일\Shader_code</Filter>
     </None>
-    <None Include="Shader_code\Texture.vs">
+    <None Include="Shader_code\Font.vs">
       <Filter>소스 파일\Shader_code</Filter>
     </None>
   </ItemGroup>
@@ -53,13 +53,19 @@
     <ClCompile Include="Source_code\Textureclass.cpp">
       <Filter>소스 파일\Source_code</Filter>
     </ClCompile>
-    <ClCompile Include="Source_code\Textureshaderclass.cpp">
-      <Filter>소스 파일\Source_code</Filter>
-    </ClCompile>
     <ClCompile Include="Source_code\cameraclass.cpp">
       <Filter>소스 파일\Source_code</Filter>
     </ClCompile>
     <ClCompile Include="Source_code\bitmapclass.cpp">
+      <Filter>소스 파일\Source_code</Filter>
+    </ClCompile>
+    <ClCompile Include="Source_code\Fontclass.cpp">
+      <Filter>소스 파일\Source_code</Filter>
+    </ClCompile>
+    <ClCompile Include="Source_code\Fontshaderclass.cpp">
+      <Filter>소스 파일\Source_code</Filter>
+    </ClCompile>
+    <ClCompile Include="Source_code\Textclass.cpp">
       <Filter>소스 파일\Source_code</Filter>
     </ClCompile>
   </ItemGroup>
@@ -76,9 +82,6 @@
     <ClInclude Include="Header_file\Textureclass.h">
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
-    <ClInclude Include="Header_file\Textureshaderclass.h">
-      <Filter>헤더 파일\Header_file</Filter>
-    </ClInclude>
     <ClInclude Include="Header_file\Cameraclass.h">
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
@@ -86,6 +89,15 @@
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
     <ClInclude Include="Header_file\bitmapclass.h">
+      <Filter>헤더 파일\Header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="Header_file\Fontclass.h">
+      <Filter>헤더 파일\Header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="Header_file\Fontshaderclass.h">
+      <Filter>헤더 파일\Header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="Header_file\Textclass.h">
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
   </ItemGroup>

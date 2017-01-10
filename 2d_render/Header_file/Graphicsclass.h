@@ -10,8 +10,7 @@
 ///////////////////////
 #include "d3dclass.h"
 #include "cameraclass.h"
-#include "textureshaderclass.h"
-#include "bitmapclass.h"
+#include "textclass.h"
 
 /////////////
 // GLOBALS //
@@ -20,7 +19,7 @@ const bool FULL_SCREEN = false;
 const bool VSYNC_ENABLED = true;
 const float SCREEN_DEPTH = 1000.0f;
 const float SCREEN_NEAR = 0.1f;
-static double position_x=100;
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // Class name: GraphicsClass
@@ -42,9 +41,7 @@ private:
 private:
 	D3DClass* m_D3D;
 	CameraClass* m_Camera;
-	Textureshaderclass* m_TextureShader;
-	BitmapClass* m_Bitmap;
-
+	TextClass* m_Text;
 	
 };
 
