@@ -57,10 +57,10 @@ bool TextClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceCont
 		return false;
 	}
 
-	result = UpdateSentence(m_sentence1, "Hello", 100, 100, 1.0f, 1.0f, 1.0f, deviceContext);
-	if (!result){
-		return false;
-	}
+	//result = UpdateSentence(m_sentence1, "Hello", 100, 100, 1.0f, 1.0f, 1.0f, deviceContext);
+	//if (!result){
+	//	return false;
+	//}
 
 	// second Sentence
 
@@ -69,10 +69,10 @@ bool TextClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceCont
 		return false;
 	}
 
-	result = UpdateSentence(m_sentence2, "GoodBye", 100, 200, 1.0f, 1.0f, 0.0f, deviceContext);
-	if (!result){
-		return false;
-	}
+	//result = UpdateSentence(m_sentence2, "GoodBye", 100, 200, 1.0f, 1.0f, 0.0f, deviceContext);
+	//if (!result){
+	//	return false;
+	//}
 
 
 	return true;
@@ -340,4 +340,43 @@ void TextClass::ReleaseSentence(SentenceType** sentence)
 	}
 
 	return;
+}
+
+bool TextClass::SetMousePosition(int mouseX, int mouseY, ID3D11DeviceContext* deviceContext){
+	char tempString[16];
+	char mouseString[16];
+
+	bool result;
+
+	//convert the mouseX integer to string format
+	_itoa_s(mouseX, tempString, 10);
+
+	//Setup the mouseX string
+	
+	strcpy_s(mouseString, "Mouse X: ");
+	strcat_s(mouseString, tempString);
+
+	//Update the sentence vertex buffer with the new string information;
+	result = UpdateSentence(m_sentence1, mouseString, 20, 20, 1.0f, 1.0f, 1.0f, deviceContext);
+
+	if (!result){
+		return false;
+	}
+
+	//convert the mouseX integer to string format
+	_itoa_s(mouseY, tempString, 10);
+
+	//Setup the mouseX string
+	strcpy_s(mouseString, "Mouse Y: ");
+	strcat_s(mouseString, tempString);
+
+	//Update the sentence vertex buffer with the new string information;
+	result = UpdateSentence(m_sentence2, mouseString, 20, 40, 1.0f, 1.0f, 1.0f, deviceContext);
+
+	if (!result){
+		return false;
+	}
+
+	return true;
+
 }

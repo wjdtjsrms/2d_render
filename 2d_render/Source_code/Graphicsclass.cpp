@@ -31,13 +31,13 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 	// Create the Direct3D object.
 	m_D3D = new D3DClass;
-	if(!m_D3D)
+	if (!m_D3D)
 	{
 		return false;
 	}
 	// Initialize the Direct3D object.
 	result = m_D3D->Initialize(screenWidth, screenHeight, VSYNC_ENABLED, hwnd, FULL_SCREEN, SCREEN_DEPTH, SCREEN_NEAR);
-	if(!result)
+	if (!result)
 	{
 		MessageBox(hwnd, L"Could not initialize Direct3D.", L"Error", MB_OK);
 		return false;
@@ -45,16 +45,13 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 	// Create the camera object.
 	m_Camera = new CameraClass;
-	if(!m_Camera)
+	if (!m_Camera)
 	{
 		return false;
 	}
 
-	// Set the initial position of the camera.
-	m_Camera->SetPosition(0.0f, 0.0f, -5.0f);
-	
 	// Initialize a base view matrix with the camera for 2D user interface rendering.
-	m_Camera->SetPosition(0.0f, 0.0f, -1.0f);
+	m_Camera->SetPosition(0.0f, 0.0f, -10.0f);
 	m_Camera->Render();
 	m_Camera->GetViewMatrix(baseViewMatrix);
 
@@ -92,14 +89,14 @@ void GraphicsClass::Shutdown()
 		m_Text = 0;
 	}
 	// Release the camera object.
-	if(m_Camera)
+	if (m_Camera)
 	{
 		delete m_Camera;
 		m_Camera = 0;
 	}
 
 	// Release the D3D object.
-	if(m_D3D)
+	if (m_D3D)
 	{
 		m_D3D->Shutdown();
 		delete m_D3D;
@@ -110,16 +107,16 @@ void GraphicsClass::Shutdown()
 }
 
 
-bool GraphicsClass::Frame()
+bool GraphicsClass::Frame(int mouseX,int mouseY)
 {
 	bool result;
 
-
-	result = Render();
-	if(!result)
+	result = m_Text->SetMousePosition(mouseX,mouseY,m_D3D->GetDeviceContext());
+	if (!result)
 	{
 		return false;
 	}
+
 
 	return true;
 }
@@ -127,7 +124,7 @@ bool GraphicsClass::Frame()
 
 bool GraphicsClass::Render()
 {
-	XMMATRIX worldMatrix, viewMatrix, projectionMatrix,orthoMatrix;
+	XMMATRIX worldMatrix, viewMatrix, projectionMatrix, orthoMatrix;
 	bool result;
 
 
