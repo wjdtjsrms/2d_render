@@ -68,6 +68,9 @@
     <ClCompile Include="Source_code\Textclass.cpp">
       <Filter>소스 파일\Source_code</Filter>
     </ClCompile>
+    <ClCompile Include="Source_code\Soundclass.cpp">
+      <Filter>소스 파일\Source_code</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header_file\Graphicsclass.h">
@@ -98,6 +101,9 @@
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
     <ClInclude Include="Header_file\Textclass.h">
+      <Filter>헤더 파일\Header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="Header_file\Soundclass.h">
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
   </ItemGroup>

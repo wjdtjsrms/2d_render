@@ -23,6 +23,7 @@
     <ClCompile Include="Source_code\Graphicsclass.cpp" />
     <ClCompile Include="Source_code\Inputclass.cpp" />
     <ClCompile Include="Source_code\Main.cpp" />
+    <ClCompile Include="Source_code\Soundclass.cpp" />
     <ClCompile Include="Source_code\Systemclass.cpp" />
     <ClCompile Include="Source_code\Textclass.cpp" />
     <ClCompile Include="Source_code\Textureclass.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="Header_file\Fontclass.h" />
     <ClInclude Include="Header_file\Graphicsclass.h" />
     <ClInclude Include="Header_file\Inputclass.h" />
+    <ClInclude Include="Header_file\Soundclass.h" />
     <ClInclude Include="Header_file\SystemClass.h" />
     <ClInclude Include="Header_file\Textclass.h" />
     <ClInclude Include="Header_file\Textureclass.h" />
