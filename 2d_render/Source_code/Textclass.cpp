@@ -7,6 +7,8 @@ TextClass::TextClass(){
 
 	m_sentence1 = 0;
 	m_sentence2 = 0;
+	m_sentence3 = 0;
+	m_sentence4 = 0;
 }
 
 TextClass::TextClass(const TextClass& other){
@@ -57,10 +59,6 @@ bool TextClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceCont
 		return false;
 	}
 
-	//result = UpdateSentence(m_sentence1, "Hello", 100, 100, 1.0f, 1.0f, 1.0f, deviceContext);
-	//if (!result){
-	//	return false;
-	//}
 
 	// second Sentence
 
@@ -69,10 +67,20 @@ bool TextClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceCont
 		return false;
 	}
 
-	//result = UpdateSentence(m_sentence2, "GoodBye", 100, 200, 1.0f, 1.0f, 0.0f, deviceContext);
-	//if (!result){
-	//	return false;
-	//}
+
+	result = InitializeSentence(&m_sentence3, 16, device);
+	if (!result){
+		return false;
+	}
+
+
+
+	result = InitializeSentence(&m_sentence4, 16, device);
+	if (!result){
+		return false;
+	}
+
+
 
 
 	return true;
@@ -82,6 +90,8 @@ void TextClass::Shutdown(){
 
 	ReleaseSentence(&m_sentence1);
 	ReleaseSentence(&m_sentence2);
+	ReleaseSentence(&m_sentence3);
+	ReleaseSentence(&m_sentence4);
 
 	if (m_FontShader){
 		m_FontShader->Shutdown();
@@ -108,6 +118,18 @@ bool TextClass::Render(ID3D11DeviceContext* deivceContext, XMMATRIX& worldMatrix
 	}
 
 	result = RenderSentence(deivceContext, m_sentence2, worldMatrix, orthoMatrix);
+
+	if (!result){
+		return false;
+	}
+
+	result = RenderSentence(deivceContext, m_sentence3, worldMatrix, orthoMatrix);
+
+	if (!result){
+		return false;
+	}
+
+	result = RenderSentence(deivceContext, m_sentence4, worldMatrix, orthoMatrix);
 
 	if (!result){
 		return false;
@@ -379,4 +401,70 @@ bool TextClass::SetMousePosition(int mouseX, int mouseY, ID3D11DeviceContext* de
 
 	return true;
 
+}
+
+bool TextClass::setFps(int fps, ID3D11DeviceContext* deviceContext){
+
+	char tempString[16];
+	char fpsString[16];
+	float red, green, blue;
+	bool result;
+
+	if (fps > 9999){
+		fps = 9999;
+	}
+
+	_itoa_s(fps, tempString, 10);
+
+	strcpy_s(fpsString, "Fps: ");
+	strcat_s(fpsString, tempString);
+
+	if (fps >= 60){
+		red = 0.0f;
+		green = 1.0f;
+		blue = 0.0f;
+	}
+
+	if (fps < 60){
+		red = 1.0f;
+		green = 1.0f;
+		blue = 0.0f;
+	}
+
+	if (fps < 30){
+		red = 1.0f;
+		green = 0.0f;
+		blue = 0.0f;
+	}
+
+	result = UpdateSentence(m_sentence3, fpsString, 20, 60, red, green, blue, deviceContext);
+
+	if (!result){
+		return false;
+	}
+	return true;
+}
+
+bool TextClass::SetCpu(int cpu, ID3D11DeviceContext* deviceContext){
+
+
+	char tempString[16];
+	char cpuString[16];
+
+	bool result;
+
+	_itoa_s(cpu, tempString, 10);
+
+	strcpy_s(cpuString, "Cpu: ");
+	strcat_s(cpuString, tempString);
+	strcat_s(cpuString, "%");
+
+
+	result = UpdateSentence(m_sentence4, cpuString, 20, 80, 0.0f, 1.0f, 0.0f, deviceContext);
+
+	if (!result){
+		return false;
+	}
+
+	return true;
 }

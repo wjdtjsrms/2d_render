@@ -23,6 +23,9 @@
 #include "inputclass.h"
 #include "graphicsclass.h"
 #include "Soundclass.h"
+#include "FpsClass.h"
+#include "Cpuclass.h"
+#include "Timeclass.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -54,6 +57,9 @@ private:
 	InputClass* m_Input;
 	GraphicsClass* m_Graphics;
 	SoundClass* m_Sound;
+	FpsClass* m_Fps;
+	CpuClass* m_Cpu;
+	TimerClass* m_Timer;
 };
 
 

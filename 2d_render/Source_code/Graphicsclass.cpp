@@ -107,7 +107,7 @@ void GraphicsClass::Shutdown()
 }
 
 
-bool GraphicsClass::Frame(int mouseX,int mouseY)
+bool GraphicsClass::Frame(int mouseX,int mouseY,int fps,int cpu,float frameTime)
 {
 	bool result;
 
@@ -116,6 +116,20 @@ bool GraphicsClass::Frame(int mouseX,int mouseY)
 	{
 		return false;
 	}
+
+	result = m_Text->setFps(fps, m_D3D->GetDeviceContext());
+	if (!result)
+	{
+		return false;
+	}
+
+	result = m_Text->SetCpu(cpu, m_D3D->GetDeviceContext());
+	if (!result)
+	{
+		return false;
+	}
+
+
 
 
 	return true;
