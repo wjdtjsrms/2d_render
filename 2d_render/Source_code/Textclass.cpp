@@ -301,8 +301,7 @@ bool TextClass::UpdateSentence(SentenceType* sentence, char* text, int positionX
 	return true;
 }
 
-bool TextClass::RenderSentence(ID3D11DeviceContext* deviceContext, SentenceType* sentence, XMMATRIX& worldMatrix,
-	XMMATRIX& orthoMatrix)
+bool TextClass::RenderSentence(ID3D11DeviceContext* deviceContext, SentenceType* sentence, XMMATRIX& worldMatrix, XMMATRIX& orthoMatrix)
 {
 	unsigned int stride, offset;
 	XMVECTOR pixelColor;

@@ -19,7 +19,7 @@ bool TextureClass::Initialize(ID3D11Device* device, WCHAR* filename){
 
 	HRESULT result;
 	result = D3DX11CreateShaderResourceViewFromFile(device, filename, NULL, NULL, &m_texture, NULL);
-
+	
 	if (FAILED(result))
 	{
 		return false;
@@ -29,7 +29,7 @@ bool TextureClass::Initialize(ID3D11Device* device, WCHAR* filename){
 	return true;
 
 }
-
+      
 void TextureClass::Shutdown()
 {
 	// Release the texture resource.

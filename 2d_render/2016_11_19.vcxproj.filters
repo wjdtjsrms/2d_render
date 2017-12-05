@@ -33,6 +33,7 @@
     <None Include="Shader_code\Font.vs">
       <Filter>소스 파일\Shader_code</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source_code\D3dclass.cpp">
@@ -122,6 +123,9 @@
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
     <ClInclude Include="Header_file\Timeclass.h">
+      <Filter>헤더 파일\Header_file</Filter>
+    </ClInclude>
+    <ClInclude Include="Header_file\d3dx11effect.h">
       <Filter>헤더 파일\Header_file</Filter>
     </ClInclude>
   </ItemGroup>

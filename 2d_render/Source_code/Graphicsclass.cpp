@@ -8,8 +8,9 @@ GraphicsClass::GraphicsClass()
 {
 	m_D3D = 0;
 	m_Camera = 0;
-
+	m_Bitmap = 0;
 	m_Text = 0;
+
 }
 
 
@@ -55,6 +56,18 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	m_Camera->Render();
 	m_Camera->GetViewMatrix(baseViewMatrix);
 
+	m_Bitmap = new BitmapClass;
+	if (!m_Bitmap){
+		return false;
+	}
+
+	result = m_Bitmap->Initialize(m_D3D->GetDevice(), screenWidth, screenHeight,hwnd, L"Resource/sample_img.dds", 256, 256);
+	if (!result){
+		MessageBox(hwnd, L"Could not initialize the bitmap object.", L"Error", MB_OK); 
+		return false;
+
+	}
+
 	// Create the text object.
 	m_Text = new TextClass;
 	if (!m_Text)
@@ -81,6 +94,15 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 
 void GraphicsClass::Shutdown()
 {
+	if (m_Bitmap)
+	{ 
+		m_Bitmap->Shutdown(); 
+		delete
+		m_Bitmap; m_Bitmap = 0; 
+	}
+
+
+
 	// Release the text object.
 	if (m_Text)
 	{
@@ -138,7 +160,7 @@ bool GraphicsClass::Frame(int mouseX,int mouseY,int fps,int cpu,float frameTime)
 
 bool GraphicsClass::Render()
 {
-	XMMATRIX worldMatrix, viewMatrix, projectionMatrix, orthoMatrix;
+	XMMATRIX worldMatrix, viewMatrix, projectionMatrix, orthoMatrix, baseViewMatrix;
 	bool result;
 
 
@@ -157,6 +179,15 @@ bool GraphicsClass::Render()
 
 	m_D3D->TurnZBufferOff();
 	m_D3D->TurnOnAlphaBlending();
+
+	m_Camera->GetViewMatrix(baseViewMatrix);
+
+	result = m_Bitmap->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix, baseViewMatrix,100, 100);
+	if (!result) 
+	{ 
+		return false; 
+	}
+
 
 	result = m_Text->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix);
 	if (!result)

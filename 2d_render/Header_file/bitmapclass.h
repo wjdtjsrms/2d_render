@@ -13,10 +13,12 @@
 #include <xnamath.h>
 
 
+
 ///////////////////////
 // MY CLASS INCLUDES //
 ///////////////////////
 #include "textureclass.h"
+#include "Fontshaderclass.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -36,9 +38,9 @@ public:
 	BitmapClass(const BitmapClass&);
 	~BitmapClass();
 
-	bool Initialize(ID3D11Device*, int, int, WCHAR*, int, int);
+	bool Initialize(ID3D11Device*, int, int, HWND, WCHAR*, int, int);
 	void Shutdown();
-	bool Render(ID3D11DeviceContext*, int, int);
+	bool Render(ID3D11DeviceContext*, XMMATRIX&, XMMATRIX&, XMMATRIX&, int, int);
 
 	int GetIndexCount();
 	ID3D11ShaderResourceView* GetTexture();
@@ -55,7 +57,9 @@ private:
 private:
 	ID3D11Buffer *m_vertexBuffer, *m_indexBuffer;
 	int m_vertexCount, m_indexCount;
-	TextureClass* m_Texture;
+	TextureClass* m_Texture; 
+	Fontshaderclass* m_FontShader;
+
 	int m_screenWidth, m_screenHeight;
 	int m_bitmapWidth, m_bitmapHeight;
 	int m_previousPosX, m_previousPosY;

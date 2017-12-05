@@ -9,6 +9,7 @@ BitmapClass::BitmapClass()
 	m_vertexBuffer = 0;
 	m_indexBuffer = 0;
 	m_Texture = 0;
+	m_FontShader = 0;
 }
 
 
@@ -22,7 +23,7 @@ BitmapClass::~BitmapClass()
 }
 
 
-bool BitmapClass::Initialize(ID3D11Device* device, int screenWidth, int screenHeight, WCHAR* textureFilename, int bitmapWidth, int bitmapHeight)
+bool BitmapClass::Initialize(ID3D11Device* device, int screenWidth, int screenHeight, HWND hwnd, WCHAR* textureFilename, int bitmapWidth, int bitmapHeight)
 {
 	bool result;
 
@@ -30,6 +31,7 @@ bool BitmapClass::Initialize(ID3D11Device* device, int screenWidth, int screenHe
 	// Store the screen size.
 	m_screenWidth = screenWidth;
 	m_screenHeight = screenHeight;
+	printf("%d", screenWidth);
 
 	// Store the size in pixels that this bitmap should be rendered at.
 	m_bitmapWidth = bitmapWidth;
@@ -38,6 +40,15 @@ bool BitmapClass::Initialize(ID3D11Device* device, int screenWidth, int screenHe
 	// Initialize the previous rendering position to negative one.
 	m_previousPosX = -1;
 	m_previousPosY = -1;
+
+
+	m_FontShader = new Fontshaderclass;
+
+	if (!m_FontShader){
+		return false;
+	}
+
+	result = m_FontShader->Initialize(device, hwnd);
 
 	// Initialize the vertex and index buffers.
 	result = InitializeBuffers(device);
@@ -59,6 +70,14 @@ bool BitmapClass::Initialize(ID3D11Device* device, int screenWidth, int screenHe
 
 void BitmapClass::Shutdown()
 {
+
+
+	if (m_FontShader){
+		m_FontShader->Shutdown();
+		delete m_FontShader;
+		m_FontShader = 0;
+	}
+
 	// Release the bitmap texture.
 	ReleaseTexture();
 
@@ -69,10 +88,10 @@ void BitmapClass::Shutdown()
 }
 
 
-bool BitmapClass::Render(ID3D11DeviceContext* deviceContext, int positionX, int positionY)
+bool BitmapClass::Render(ID3D11DeviceContext* deviceContext, XMMATRIX& worldMatrix, XMMATRIX& orthoMatrix, XMMATRIX& baseViewMatrix ,int positionX, int positionY)
 {
 	bool result;
-
+	XMVECTOR pixelColor;
 
 	// Re-build the dynamic vertex buffer for rendering to possibly a different location on the screen.
 	result = UpdateBuffers(deviceContext, positionX, positionY);
@@ -83,6 +102,13 @@ bool BitmapClass::Render(ID3D11DeviceContext* deviceContext, int positionX, int 
 
 	// Put the vertex and index buffers on the graphics pipeline to prepare them for drawing.
 	RenderBuffers(deviceContext);
+
+	pixelColor = XMVectorSet(1.0f, 1.0f, 1.0f, 1.0f);
+	result = m_FontShader->Render(deviceContext, GetIndexCount(), worldMatrix, baseViewMatrix, orthoMatrix, GetTexture(), pixelColor);
+	if (!result)
+	{
+		false;
+	}
 
 	return true;
 }

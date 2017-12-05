@@ -11,6 +11,8 @@
 #include "d3dclass.h"
 #include "cameraclass.h"
 #include "textclass.h"
+#include "bitmapclass.h"
+#include "Fontshaderclass.h"
 
 /////////////
 // GLOBALS //
@@ -41,6 +43,9 @@ private:
 	D3DClass* m_D3D;
 	CameraClass* m_Camera;
 	TextClass* m_Text;
+	BitmapClass* m_Bitmap;
+	
+	
 	
 };
 
