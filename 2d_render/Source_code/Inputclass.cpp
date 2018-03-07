@@ -174,17 +174,27 @@ bool InputClass::ReadMouse(){
 void InputClass::ProcessInput(){
 
 	//// Update the location of the mouse cursor based on the change of the mouse location during the frame.
-	if (m_mouseState.rgbButtons[MOUSE_LEFT & 0x80]){
-		m_mouseX += m_mouseState.lX;
+	//if (m_mouseState.rgbButtons[MOUSE_LEFT & 0x80]){
+	//	m_mouseX += m_mouseState.lX;
+	//	m_mouseY += m_mouseState.lY;
+	//}
+	m_mouseX += m_mouseState.lX;
+	m_mouseY += m_mouseState.lY;
+	printf("%d\n", m_screenWidth);
 
-		m_mouseY += m_mouseState.lY;
+	if(m_mouseX < 0) { m_mouseX = 0; } 
+	if(m_mouseY < 0) { m_mouseY = 0; } 
+
+	if(m_mouseX > m_screenWidth) 
+	{ 
+		m_mouseX = m_screenWidth; 
+	} 
+	if(m_mouseY > m_screenHeight) 
+	{ 
+		m_mouseY = m_screenHeight; 
 	}
 
-	//if (m_mouseX < 0){m_mouseX = 0;}
-	//if (m_mouseY < 0) { m_mouseY = 0; } 
 
-	//if (m_mouseX > m_screenWidth) { m_mouseX = m_screenWidth; } 
-	//if (m_mouseY > m_screenHeight) { m_mouseY = m_screenHeight; }
 
 	return;
 }

@@ -10,6 +10,7 @@ GraphicsClass::GraphicsClass()
 	m_Camera = 0;
 	m_Bitmap = 0;
 	m_Text = 0;
+	
 
 }
 
@@ -27,18 +28,8 @@ GraphicsClass::~GraphicsClass()
 bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 {
 	bool result;
-	XMMATRIX baseViewMatrix;
-
-
-	// Create the Direct3D object.
-	m_D3D = new D3DClass;
-	if (!m_D3D)
-	{
-		return false;
-	}
-	// Initialize the Direct3D object.
-	result = m_D3D->Initialize(screenWidth, screenHeight, VSYNC_ENABLED, hwnd, FULL_SCREEN, SCREEN_DEPTH, SCREEN_NEAR);
-	if (!result)
+		
+	if (!Initialize_D3D(screenWidth, screenHeight, hwnd))
 	{
 		MessageBox(hwnd, L"Could not initialize Direct3D.", L"Error", MB_OK);
 		return false;
@@ -54,7 +45,6 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	// Initialize a base view matrix with the camera for 2D user interface rendering.
 	m_Camera->SetPosition(0.0f, 0.0f, -10.0f);
 	m_Camera->Render();
-	m_Camera->GetViewMatrix(baseViewMatrix);
 
 	m_Bitmap = new BitmapClass;
 	if (!m_Bitmap){
@@ -76,7 +66,7 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	}
 
 	// Initialize the text object.
-	result = m_Text->Initialize(m_D3D->GetDevice(), m_D3D->GetDeviceContext(), hwnd, screenWidth, screenHeight, baseViewMatrix);
+	result = m_Text->Initialize(m_D3D->GetDevice(), m_D3D->GetDeviceContext(), hwnd, screenWidth, screenHeight);
 	if (!result)
 	{
 		MessageBox(hwnd, L"Could not initialize the text object.", L"Error", MB_OK);
@@ -84,13 +74,27 @@ bool GraphicsClass::Initialize(int screenWidth, int screenHeight, HWND hwnd)
 	}
 
 
-
-
-
-
 	return true;
 }
 
+
+
+bool GraphicsClass::Initialize_D3D(int screenWidth, int screenHeight, HWND hwnd){
+
+	m_D3D = new D3DClass;
+
+	if (!m_D3D)
+	{
+		return false;
+	}
+
+	if (!m_D3D->Initialize(screenWidth, screenHeight, VSYNC_ENABLED, hwnd, FULL_SCREEN, SCREEN_DEPTH, SCREEN_NEAR))
+	{
+		return false;
+	}
+
+	return true;
+}
 
 void GraphicsClass::Shutdown()
 {
@@ -100,8 +104,6 @@ void GraphicsClass::Shutdown()
 		delete
 		m_Bitmap; m_Bitmap = 0; 
 	}
-
-
 
 	// Release the text object.
 	if (m_Text)
@@ -182,14 +184,14 @@ bool GraphicsClass::Render()
 
 	m_Camera->GetViewMatrix(baseViewMatrix);
 
-	result = m_Bitmap->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix, baseViewMatrix,100, 100);
+	result = m_Bitmap->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix, baseViewMatrix,256, 256);
 	if (!result) 
 	{ 
 		return false; 
 	}
 
 
-	result = m_Text->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix);
+	result = m_Text->Render(m_D3D->GetDeviceContext(), worldMatrix, orthoMatrix, baseViewMatrix);
 	if (!result)
 	{
 		return false;

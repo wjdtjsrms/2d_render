@@ -20,13 +20,13 @@ TextClass::~TextClass(){
 }
 
 
-bool TextClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceContext,HWND hwnd, int screenWidth,int screenHight,XMMATRIX& baseViewMatrix){
+bool TextClass::Initialize(ID3D11Device* device, ID3D11DeviceContext* deviceContext,HWND hwnd, int screenWidth,int screenHight){
 	bool result;
 
 	m_screenWidth = screenWidth;
 	m_screenHeight = screenHight;
 
-	XMStoreFloat4x4(&m_baseViewMatrix, baseViewMatrix); // m_Baseviewmatrix=baseViewmatrix
+	
 
 	m_Font = new FontClass;
 	if (!m_Font){
@@ -108,28 +108,28 @@ void TextClass::Shutdown(){
 }
 
 
-bool TextClass::Render(ID3D11DeviceContext* deivceContext, XMMATRIX& worldMatrix, XMMATRIX& orthoMatrix){
+bool TextClass::Render(ID3D11DeviceContext* deivceContext, XMMATRIX& worldMatrix, XMMATRIX& orthoMatrix, XMMATRIX& baseViewMatrix){
 	bool result;
 
-	result = RenderSentence(deivceContext, m_sentence1, worldMatrix, orthoMatrix);
+	result = RenderSentence(deivceContext, m_sentence1, worldMatrix, orthoMatrix, baseViewMatrix);
 
 	if (!result){
 		return false;
 	}
 
-	result = RenderSentence(deivceContext, m_sentence2, worldMatrix, orthoMatrix);
+	result = RenderSentence(deivceContext, m_sentence2, worldMatrix, orthoMatrix, baseViewMatrix);
 
 	if (!result){
 		return false;
 	}
 
-	result = RenderSentence(deivceContext, m_sentence3, worldMatrix, orthoMatrix);
+	result = RenderSentence(deivceContext, m_sentence3, worldMatrix, orthoMatrix, baseViewMatrix);
 
 	if (!result){
 		return false;
 	}
 
-	result = RenderSentence(deivceContext, m_sentence4, worldMatrix, orthoMatrix);
+	result = RenderSentence(deivceContext, m_sentence4, worldMatrix, orthoMatrix, baseViewMatrix);
 
 	if (!result){
 		return false;
@@ -301,14 +301,13 @@ bool TextClass::UpdateSentence(SentenceType* sentence, char* text, int positionX
 	return true;
 }
 
-bool TextClass::RenderSentence(ID3D11DeviceContext* deviceContext, SentenceType* sentence, XMMATRIX& worldMatrix, XMMATRIX& orthoMatrix)
+bool TextClass::RenderSentence(ID3D11DeviceContext* deviceContext, SentenceType* sentence, XMMATRIX& worldMatrix, XMMATRIX& orthoMatrix, XMMATRIX& baseViewMatrix)
 {
 	unsigned int stride, offset;
 	XMVECTOR pixelColor;
-	XMMATRIX baseViewMatrix;
 	bool result;
 
-	baseViewMatrix = XMLoadFloat4x4(&m_baseViewMatrix);
+	
 
 	// Set vertex buffer stride and offset.
 	stride = sizeof(VertexType);

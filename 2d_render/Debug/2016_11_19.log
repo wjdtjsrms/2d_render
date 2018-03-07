@@ -1,31 +1,921 @@
-﻿빌드 시작: 2017-12-05 오후 10:01:19
-     1>2 노드의 "D:\c++_Save\2d_render\2d_render\2016_11_19.vcxproj" 프로젝트(Build 대상)입니다.
-     1>ClCompile:
-         D:\visual_studio_2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Source_code\Systemclass.cpp
-         Systemclass.cpp
-       Link:
-         D:\visual_studio_2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\c++_Save\2d_render\2d_render\Debug\2016_11_19.exe" /INCREMENTAL /NOLOGO d3d11.lib D3DCompiler.lib dxerr.lib dxgi.lib dxguid.lib Effects11d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\2016_11_19.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\c++_Save\2d_render\2d_render\Debug\2016_11_19.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\c++_Save\2d_render\2d_render\Debug\2016_11_19.lib" /MACHINE:X86 Debug\2016_11_19.exe.embed.manifest.res
-         Debug\bitmapclass.obj
-         Debug\cameraclass.obj
-         Debug\Cpuclass.obj
-         Debug\D3dclass.obj
-         Debug\Fontclass.obj
-         Debug\Fpsclass.obj
-         Debug\Graphicsclass.obj
-         Debug\Inputclass.obj
-         Debug\Main.obj
-         Debug\Soundclass.obj
-         Debug\Systemclass.obj
-         Debug\Textclass.obj
-         Debug\Textureclass.obj
-         Debug\Fontshaderclass.obj
-         Debug\Timeclass.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\2016_11_19.exe.embed.manifest" /manifest Debug\2016_11_19.exe.intermediate.manifest
-       LinkEmbedManifest:
-         2016_11_19.vcxproj -> D:\c++_Save\2d_render\2d_render\Debug\2016_11_19.exe
-     1>"D:\c++_Save\2d_render\2d_render\2016_11_19.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
-
-빌드했습니다.
-
-경과 시간: 00:00:01.26
+﻿  bitmapclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  cameraclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Cpuclass.cpp
+  D3dclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Fontclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Fpsclass.cpp
+  Graphicsclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Inputclass.cpp
+  Main.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\c++_save\2d_render\2d_render\source_code\main.cpp(13): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(242): note: 'freopen' 선언을 참조하십시오.
+  Soundclass.cpp
+  Systemclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Textclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Textureclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+  Fontshaderclass.cpp
+d:\diretx2010\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53664): note: 'DXGI_STATUS_CLIPPED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(14): warning C4005: 'DXGI_STATUS_NO_REDIRECTION': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53673): note: 'DXGI_STATUS_NO_REDIRECTION'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(15): warning C4005: 'DXGI_STATUS_NO_DESKTOP_ACCESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53682): note: 'DXGI_STATUS_NO_DESKTOP_ACCESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(16): warning C4005: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53691): note: 'DXGI_STATUS_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(17): warning C4005: 'DXGI_STATUS_MODE_CHANGED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53700): note: 'DXGI_STATUS_MODE_CHANGED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(18): warning C4005: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53709): note: 'DXGI_STATUS_MODE_CHANGE_IN_PROGRESS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(21): warning C4005: 'DXGI_ERROR_INVALID_CALL': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53724): note: 'DXGI_ERROR_INVALID_CALL'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(22): warning C4005: 'DXGI_ERROR_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53733): note: 'DXGI_ERROR_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(23): warning C4005: 'DXGI_ERROR_MORE_DATA': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53742): note: 'DXGI_ERROR_MORE_DATA'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(24): warning C4005: 'DXGI_ERROR_UNSUPPORTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53751): note: 'DXGI_ERROR_UNSUPPORTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(25): warning C4005: 'DXGI_ERROR_DEVICE_REMOVED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53760): note: 'DXGI_ERROR_DEVICE_REMOVED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(26): warning C4005: 'DXGI_ERROR_DEVICE_HUNG': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53769): note: 'DXGI_ERROR_DEVICE_HUNG'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(27): warning C4005: 'DXGI_ERROR_DEVICE_RESET': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53779): note: 'DXGI_ERROR_DEVICE_RESET'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(28): warning C4005: 'DXGI_ERROR_WAS_STILL_DRAWING': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53788): note: 'DXGI_ERROR_WAS_STILL_DRAWING'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(29): warning C4005: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53798): note: 'DXGI_ERROR_FRAME_STATISTICS_DISJOINT'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(30): warning C4005: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53807): note: 'DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(31): warning C4005: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53817): note: 'DXGI_ERROR_DRIVER_INTERNAL_ERROR'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(32): warning C4005: 'DXGI_ERROR_NONEXCLUSIVE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53826): note: 'DXGI_ERROR_NONEXCLUSIVE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(33): warning C4005: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53835): note: 'DXGI_ERROR_NOT_CURRENTLY_AVAILABLE'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(34): warning C4005: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53845): note: 'DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\dxgitype.h(35): warning C4005: 'DXGI_ERROR_REMOTE_OUTOFMEMORY': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53854): note: 'DXGI_ERROR_REMOTE_OUTOFMEMORY'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(917): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54118): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(918): warning C4005: 'D3D11_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54127): note: 'D3D11_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(919): warning C4005: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54137): note: 'D3D11_ERROR_TOO_MANY_UNIQUE_VIEW_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d11.h(920): warning C4005: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54146): note: 'D3D11_ERROR_DEFERRED_CONTEXT_MAP_WITHOUT_INITIAL_DISCARD'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
+d:\diretx2010\include\xnamath.h(2662): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2663): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2664): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2665): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2666): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2667): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2668): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2689): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2690): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2691): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2694): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2695): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2698): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2702): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2712): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2713): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2715): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2716): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2717): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2727): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2728): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2729): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2730): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2731): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2732): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2742): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2743): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamath.h(2754): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(2253): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4522): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4576): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4638): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4706): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4769): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathconvert.inl(4831): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathvector.inl(1269): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(518): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\diretx2010\include\xnamathmisc.inl(519): warning C4838: 'unsigned int'에서 'INT'(으)로의 변환에는 축소 변환이 필요합니다.
+  Timeclass.cpp
+  코드를 생성하고 있습니다...
+  2016_11_19.vcxproj -> D:\c++_Save\2d_render\2d_render\Debug\2016_11_19.exe

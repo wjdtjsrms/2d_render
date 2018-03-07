@@ -12,7 +12,7 @@
 #include "cameraclass.h"
 #include "textclass.h"
 #include "bitmapclass.h"
-#include "Fontshaderclass.h"
+
 
 /////////////
 // GLOBALS //
@@ -34,10 +34,16 @@ public:
 	~GraphicsClass();
 
 	bool Initialize(int, int, HWND);
+
 	void Shutdown();
 	bool Frame(int,int,int,int,float);
 	bool Render();
 	
+private:
+	bool Initialize_D3D(int, int, HWND);
+	bool Initialize_m_Camera();
+	bool Initialize_m_Text();
+	bool Initialize_m_Bitmap();
 
 private:
 	D3DClass* m_D3D;

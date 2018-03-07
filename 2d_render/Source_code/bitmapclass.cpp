@@ -31,7 +31,7 @@ bool BitmapClass::Initialize(ID3D11Device* device, int screenWidth, int screenHe
 	// Store the screen size.
 	m_screenWidth = screenWidth;
 	m_screenHeight = screenHeight;
-	printf("%d", screenWidth);
+	
 
 	// Store the size in pixels that this bitmap should be rendered at.
 	m_bitmapWidth = bitmapWidth;
